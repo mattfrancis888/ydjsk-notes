@@ -66,6 +66,12 @@ bar.call( window ); // 2
 // ----------------------------------------------------------
 
 //Explicit Hard Binding with 'apply'! 'apply' is usefull because you can put an array as an argument
+//'apply' is useless now becasue of ,..., the spread operator. Eg;
+
+var args = [3,3];
+foo.apply(obj, args);
+// is the same as
+foo.call(obj, ...args);
 
 /* And becasue of: function theFunction(name, profession) {
     console.log("My name is " + name + " and I am a " + profession +".");

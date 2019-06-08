@@ -1,3 +1,4 @@
+//NOTE: Other chapters covers other stuff like hoisting; but I won't be making any notes because It;s basic JS
 //IIFE with params
 var a = 2;
 
