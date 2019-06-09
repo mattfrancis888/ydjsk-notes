@@ -58,7 +58,26 @@ let grizzly = new Grizzly();
 grizzly.growl();
 
 
-//Another video that explains prototype inheritance with Object.create : https://www.youtube.com/watch?v=qqyZn8X9M3I
+//Another video that explains  Object.create : https://www.youtube.com/watch?v=qqyZn8X9M3I
+
+//Here's why Kyle recommends to use Object.create() always rather than only uing new Class();
+function Bear(type){
+    this.type = type;
+    Bear.count++;
+}
+Bear.count = 0;
+
+new Bear('black');
+Bear.count; // 1
+
+
+function Grizzly(){
+  Bear.call(this, 'griz') // simulates super()
+}
+
+Grizzly.prototype = Object.create(Bear.prototype); //Delete this and watch what happens to grizzly count
+grizzly = new Grizzly();
+console.log(grizzly.count)
 // ----------------------------------------------------------
 
 //Dont' use  Child.prototype = `new ParentClass()`
