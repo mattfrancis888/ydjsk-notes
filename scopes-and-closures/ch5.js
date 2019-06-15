@@ -1,3 +1,12 @@
+//Closures: a A closure is simply a function that retains a reference to one or more variables in a parent scope (or scopes).
+function p1(){
+  let a = 'a';
+  function c1(){
+    return a //dosen't have to return a; a reference to a like console.log(a) is a closure
+  }
+  return c1;
+}
+
 // ----------------------------------------------------------
 //MODULES
 function CoolModule() {
